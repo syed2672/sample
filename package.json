@@ -1,0 +1,35 @@
+{
+    "name": "mean",
+    "version": "1.0.0",
+    "description": "to upload files",
+    "main": "server.js",
+    "scripts": {
+      "start": "node app.js",
+      "dev": "nodemon app.js"
+    },
+    "author": "syed",
+    "dependencies": {
+        "body-parser": "^1.15.0",
+        "express": "^4.13.4",
+        "mongoose": "^4.4.8",
+        "morgan": "^1.7.0"
+       },
+    "devDependencies": {
+      "nodemon": "^1.17.2"
+    },
+    "engines": {
+      "node": "8.9.1",
+      "npm": "5.8.0"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/moin2672/mean"
+    },
+    "keywords": [
+      "node",
+      "heroku",
+      "express",
+      "MEAN"
+    ],
+    "license": "MIT"
+  }

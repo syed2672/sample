@@ -1,0 +1,179 @@
+
+<!-- <ul class="nav nav-tabs" style="margin-top:100px;">
+    <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#intro">
+            <i class="fa fa-check"></i> Introduction</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#prof">
+            <i class="fa fa-check"></i> Personal Information</a>
+    </li>
+</ul> -->
+<form name="addForm" novalidate>
+    <!-- <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade show active" id="intro" style="margin-top:20px;"> -->
+            <div class="form-group" style="margin-top:100px;">
+                <div class="upload-btn-wrapper">
+                    <button class="btn btn-primary btn-upload" style="border-radius:50%;height: 140px;width: 140px;" ng-click="upload()">
+                        <i class="fa fa-3x fa-user" aria-hidden="true" ng-if="!profile.picture"></i>
+                        <a href="{{profile.picture.url}}" class="thumbnail" ng-if="profile.picture">
+                            
+                            <img ng-src="{{profile.picture.url | fpConvert: {filter:'sharpen'} }}" style="border-radius:50%;height: 100px;width: 100px;">
+                        </a>
+                    </button>
+                    
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="userName">User Name</label> <span style="float:right;" class="badge badge-info" ng-if="addForm.userName.$invalid">* Required</span>
+                <input type="text" class="form-control" placeholder="Enter Name" name="userName" ng-model="profile.userName" required/>
+            </div>
+            <div class="form-group">
+                <label for="userDescription">User Description</label><span style="float:right;" class="badge badge-info" ng-if="addForm.userDescription.$invalid">* Required</span>
+                <textarea class="form-control" placeholder="Enter user description" name="userDescription" ng-model="profile.userDescription"
+                    rows="5" required></textarea>
+            </div>
+        <!-- </div>
+        <div class="tab-pane fade" id="prof" style="margin-top:20px;"> -->
+            <div class="form-group">
+                <label for="userState">Select a State</label><span style="float:right;" class="badge badge-info" ng-if="addForm.userState.$invalid">* Required</span>
+                <select class="custom-select" name="userState" ng-model="profile.userState" required>
+                    <option selected="">Select the State</option>
+                    <option value="Alabama">Alabama</option>
+                    <option value="Alaska">Alaska</option>
+                    <option value="Arizona">Arizona</option>
+                    <option value="Arkansas">Arkansas</option>
+                    <option value="California">California</option>
+                    <option value="Colorado">Colorado</option>
+                    <option value="Connecticut">Connecticut</option>
+                    <option value="Delaware">Delaware</option>
+                    <option value="Florida">Florida</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Hawaii">Hawaii</option>
+                    <option value="Idaho">Idaho</option>
+                    <option value="Illinois">Illinois</option>
+                    <option value="Indiana">Indiana</option>
+                    <option value="Iowa">Iowa</option>
+                    <option value="Kansas">Kansas</option>
+                    <option value="Kentucky">Kentucky</option>
+                    <option value="Louisiana">Louisiana</option>
+                    <option value="Maine">Maine</option>
+                    <option value="Maryland">Maryland</option>
+                    <option value="Massachusetts">Massachusetts</option>
+                    <option value="Michigan">Michigan</option>
+                    <option value="Minnesota">Minnesota</option>
+                    <option value="Mississippi">Mississippi</option>
+                    <option value="Missouri">Missouri</option>
+                    <option value="Montana">Montana</option>
+                    <option value="Nebraska">Nebraska</option>
+                    <option value="Nevada">Nevada</option>
+                    <option value="New Hampshire">New Hampshire</option>
+                    <option value="New Jersey">New Jersey</option>
+                    <option value="New Mexico">New Mexico</option>
+                    <option value="New York">New York</option>
+                    <option value="North Carolina">North Carolina</option>
+                    <option value="North Dakota">North Dakota</option>
+                    <option value="Ohio">Ohio</option>
+                    <option value="Oklahoma">Oklahoma</option>
+                    <option value="Oregon">Oregon</option>
+                    <option value="Pennsylvania">Pennsylvania</option>
+                    <option value="Rhode Island">Rhode Island</option>
+                    <option value="South Carolina">South Carolina</option>
+                    <option value="South Dakota">South Dakota</option>
+                    <option value="Tennessee">Tennessee</option>
+                    <option value="Texas">Texas</option>
+                    <option value="Utah">Utah</option>
+                    <option value="Vermont">Vermont</option>
+                    <option value="Virginia">Virginia</option>
+                    <option value="Washington">Washington</option>
+                    <option value="West Virginia">West Virginia</option>
+                    <option value="Wisconsin">Wisconsin</option>
+                    <option value="Wyoming">Wyoming</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="userAge">Age</label><span style="float:right;" class="badge badge-info" ng-if="addForm.userAge.$invalid">* Required</span>
+                <input type="number" min="0" class="form-control" placeholder="Enter Age" name="userAge" ng-model="profile.userAge" required
+                />
+            </div>
+            <div class="form-group">
+                <label for="ethnicity">Ethnicity</label><span style="float:right;" class="badge badge-info" ng-if="addForm.userEthnicity.$invalid">* Required</span>
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="hisplato" name="userEthnicity" class="custom-control-input" checked="" value="Hispanic or Latino"
+                        ng-model="profile.userEthnicity" required>
+                    <label class="custom-control-label" for="hisplato">Hispanic or Latino</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="nonhisplato" name="userEthnicity" class="custom-control-input" value="Non-Hispanic or Non-Latino"
+                        ng-model="profile.userEthnicity" required>
+                    <label class="custom-control-label" for="nonhisplato">Non-Hispanic or Non-Latino</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="race">Race</label><span style="float:right;" class="badge badge-info" ng-if="addForm.userRace.$invalid">* Required</span>
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="american" name="userRace" class="custom-control-input" value="American" checked="" ng-model="profile.userRace" required>
+                    <label class="custom-control-label" for="american">American</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="asian" name="userRace" class="custom-control-input" value="Asian" ng-model="profile.userRace" required>
+                    <label class="custom-control-label" for="asian">Asian</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="hawaian" name="userRace" class="custom-control-input" value="Native Hawaian or Other Pacific Islander"
+                        ng-model="profile.userRace" required>
+                    <label class="custom-control-label" for="hawaian">Native Hawaian or Other Pacific Islander</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="african" name="userRace" class="custom-control-input" value="Black or African American" ng-model="profile.userRace" required>
+                    <label class="custom-control-label" for="african">Black or African American</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="white" name="userRace" class="custom-control-input" value="White" ng-model="profile.userRace" required>
+                    <label class="custom-control-label" for="white">White</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="sex">Sex</label><span style="float:right;" class="badge badge-info" ng-if="addForm.userSex.$invalid">* Required</span>
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="male" name="userSex" class="custom-control-input" value="Male" checked="" ng-model="profile.userSex" required>
+                    <label class="custom-control-label" for="male">Male</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="female" name="userSex" value="Female" class="custom-control-input" ng-model="profile.userSex" required>
+                    <label class="custom-control-label" for="female">Female</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="userHeight">Height</label><span style="float:right;" class="badge badge-info" ng-if="addForm.userHeight.$invalid">* Required</span>
+                <div class="form-group">
+                    <div class="input-group mb-3">
+                        <input class="form-control" placeholder="Height in inches" type="number" min="0" step="0.1" name="userHeight" ng-model="profile.userHeight"
+                            required/>
+                        <div class="input-group-append">
+                            <span class="input-group-text">in inches</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="userWeight">Weight</label><span style="float:right;" class="badge badge-info" ng-if="addForm.userWeight.$invalid">* Required</span>
+                <div class="form-group">
+                    <div class="input-group mb-3">
+                        <input class="form-control" placeholder="Weight in pounds" type="number" min="0" step="0.1" name="userWeight" id="userWeight"
+                            ng-model="profile.userWeight" required />
+                        <div class="input-group-append">
+                            <span class="input-group-text">in pounds</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- </div>
+    </div> -->
+    <button type="submit" class="btn btn-danger btn-block" ng-click="createProfile()" 
+    ng-disabled="(addForm.profile.$invalid || addForm.userDescription.$invalid || 
+    addForm.userState.$invalid || addForm.userAge.$invalid || addForm.userEthnicity.$invalid ||
+    addForm.userRace.$invalid || addForm.userSex.$invalid || addForm.userHeight.$invalid || addForm.userWeight.$invalid)">Submit</button>
+    
+</form>

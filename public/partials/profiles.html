@@ -1,0 +1,32 @@
+<!-- view the gallery of all the profilees in the db -->
+<div class="row" style="margin-top:50px;">
+    <div class="col-md-10" ng-repeat="profile in profiles">
+
+        <div class="list-group" style="margin-top:10px;">
+            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+                <div class="d-flex w-100">
+                        <img ng-src="{{profile.picture.url}}"
+                        style="height:50px;width:50px;border-radius: 5%;float:left;margin-right:10px;margin-bottom:10px;" alt="{{profile.userName | uppercase}}" />
+                        <h1 class="mb-1" style="float:left;">{{profile.userName | uppercase}}</h1> 
+                       
+                   
+                    <!-- <h5 class="mb-1">{{profile.userName | uppercase}}</h5> -->
+                    <!-- <small>Created On: {{profile.createdAt}}</small> -->
+                </div>
+                <p class="mb-1">
+                    <i>"{{profile.userDescription}}"</i>
+                </p>
+                <br>
+                <h5> Resides @
+                    <b>{{profile.userState}}</b>
+                </h5>
+                <hr>  
+                 <h6>Created On: {{profile.createdAt | date : "medium"}}</h6>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+
+

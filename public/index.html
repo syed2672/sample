@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html ng-app="superheroApp">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Sample Test Application</title>
+  <meta name="description" content="sample test application database">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+ 
+
+  <!-- CSS -->
+  <!-- <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css"/> -->
+  <link rel="stylesheet" href="https://bootswatch.com/4/united/bootstrap.min.css" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- JS libraries -->
+
+  <!-- <script src="./bower_components/angular/angular.js"></script>   
+    <script src="./bower_components/angular-route/angular-route.js"></script> -->
+  <script data-require="angular.js@1.3.0-beta.5" data-semver="1.3.0-beta.5" src="https://code.angularjs.org/1.3.0-beta.5/angular.js"></script>
+  <!-- <script data-require="angular.js@1.6.6" data-semver="1.6.5" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script> -->
+  <script data-require="angular-route@1.2.14" data-semver="1.2.14" src="https://code.angularjs.org/1.2.14/angular-route.js"></script>
+  <script src="./bower_components/filepicker-js/filepicker.js"></script>
+  <script src="./bower_components/angular-filepicker/dist/angular_filepicker.js"></script>
+
+ 
+
+  <!-- Angular files -->
+  <script src="./app.js"></script>
+
+  <script src="./controllers/addProfileController.js"></script>
+  <script src="./controllers/profilesController.js"></script>
+  <script src="./controllers/aboutController.js"></script>
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Sample Profile Enrollment</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#home">Add Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#profiles">Profiles</a>
+        </li>
+        <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+      </ul>
+      <!-- <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+          </form> -->
+    </div>
+  </nav>
+  <div class="container">
+    <!-- <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Superheroes MEAN app</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li role="presentation"><a href="#home">Add Superhero</a></li>
+                <li role="presentation"><a href="#profiles">Gallery</a></li>
+              </ul>
+            </div>
+        </div>
+    </nav> -->
+
+
+
+
+    <!-- Here is where the partials will be displayed -->
+    <div ng-view></div>
+  </div>
+</body>
+
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+
+  <head>
+    <script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script>
+<script src="https://static.filestackapi.com/v3/filestack.js"></script>
+<script type="text/javascript">
+  var fsClient = filestack.init('AbXZQKrBT1SK0QR1sRkQtz');
+  function openPicker() {
+    fsClient.pick({
+      accept: 'image/*',
+      minFiles: 1,
+      maxFiles: 1,
+      maxSize: (100 * 1024 * 1024)
+    }).then(function(response) {
+      // declare this function to handle response
+var res = response;
+      console.log(response);
+      console.log("res=",res.filesUploaded[0].url);
+      //handleFilestack(response);
+    });
+  }
+</script>
+  </head>
+
+  <body>
+    <h1>Hi Hello Plunker!</h1>
+
+
+
+ <a href="javascript:openPicker()">javascript:openPicker()</a>
+  </body>
+
+</html>
+
+<input type="filepicker" data-fp-apikey="AbXZQKrBT1SK0QR1sRkQtz"
+onchange="console.log(event.fpfile)">
+
+<button type="submit" (onclick)="openPicker()">submit</button>
+
+-->
