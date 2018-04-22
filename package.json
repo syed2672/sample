@@ -23,11 +23,10 @@
     },
     "repository": {
       "type": "git",
-      "url": "https://github.com/moin2672/mean"
+      "url": "https://github.com/syed2672/mean"
     },
     "keywords": [
       "node",
-      "heroku",
       "express",
       "MEAN"
     ],

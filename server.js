@@ -8,18 +8,12 @@ var path = require('path');
 
 var profile = require('./app/routes/profileRoutes')();
 
-// Just some options for the db connection
-/*
-var options = { server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }, 
-                replset: { socketOptions: { keepAlive: 1, connectTimeoutMS : 30000 } } }; 
 
-mongoose.connect('mongodb://syed:syed@ds253889.mlab.com:53889/meandemo', options);
-*/
 var bluebird = require('bluebird');
 mongoose.Promise = bluebird
-mongoose.connect('mongodb://syed:syed@ds253889.mlab.com:53889/meandemo', { useMongoClient: true})
-.then(()=> { console.log(`Succesfully Connected to the Mongodb Database  at URL : mongodb://syed:syed@ds253889.mlab.com:53889/meandemo`)})
-.catch(()=> { console.log(`Error Connecting to the Mongodb Database at URL :mongodb://syed:syed@ds253889.mlab.com:53889/meandemo`)})
+mongoose.connect('mongodb://127.0.0.1:27017/meandemo', { useMongoClient: true})
+.then(()=> { console.log(`Succesfully Connected to the Mongodb Database  at URL : mongodb://127.0.0.1:27017/meandemo`)})
+.catch(()=> { console.log(`Error Connecting to the Mongodb Database at URL : mongodb://127.0.0.1:27017/meandemo`)})
 
 
 
@@ -46,10 +40,6 @@ app.route('/profile')
 app.route('/profile/:id')
     .get(profile.getOne);
 
-// app.listen(port);
-// console.log('listening on port ' + port);
-
-// var port = process.env.PORT || 3000;
 app.listen(port, "0.0.0.0", function() {
 console.log("Listening on Port 3000");
 });
